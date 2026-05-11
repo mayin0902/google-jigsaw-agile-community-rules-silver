@@ -1,6 +1,10 @@
 # Google Jigsaw Agile Community Rules Classification
 
-Kaggle Silver Medal solution for **Google Jigsaw - Agile Community Rules Classification**.
+![Kaggle](https://img.shields.io/badge/Kaggle-Silver%20Medal-C0C0C0)
+![Rank](https://img.shields.io/badge/Rank-42%20%2F%202445-blue)
+![Organizer](https://img.shields.io/badge/Organizer-Google%20Jigsaw-green)
+
+**Kaggle Silver Medal solution**, ranked **42 / 2445** in **Google Jigsaw - Agile Community Rules Classification**.
 
 The task is rule-conditioned moderation: given a community rule and a user post, predict whether the post violates that rule. The solution combines an instruction-tuned LLM judge, metric learning over rule examples, and a discriminative DeBERTa classifier.
 
@@ -10,8 +14,8 @@ The task is rule-conditioned moderation: given a community rule and a user post,
 | --- | --- |
 | Competition | Google Jigsaw - Agile Community Rules Classification |
 | Organizer | Google Jigsaw |
-| Medal | Silver |
-| Rank | 42 / 2445 |
+| Medal | **Silver Medal** |
+| Rank | **42 / 2445** |
 | Awarded | October 24, 2025 |
 | Metric | Column-averaged AUC |
 | Final AUC | 0.92909 |
