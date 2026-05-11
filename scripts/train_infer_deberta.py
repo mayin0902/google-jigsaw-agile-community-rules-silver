@@ -1,0 +1,5 @@
+from jigsaw_agile.deberta_cls import cli
+
+
+if __name__ == "__main__":
+    cli()

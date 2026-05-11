@@ -1,0 +1,14 @@
+accelerate
+auto-gptq
+bitsandbytes
+clean-text
+datasets
+deepspeed
+faiss-cpu
+logits-processor-zoo
+optimum
+peft
+sentence-transformers
+transformers
+trl
+vllm

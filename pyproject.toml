@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jigsaw-agile-solution"
+version = "0.1.0"
+description = "Refactored Kaggle Jigsaw Agile Community Rules Classification solution."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scikit-learn",
+  "torch",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+kaggle = [
+  "accelerate",
+  "bitsandbytes",
+  "datasets",
+  "deepspeed",
+  "faiss-cpu",
+  "logits-processor-zoo",
+  "peft",
+  "sentence-transformers",
+  "transformers",
+  "trl",
+  "vllm",
+]
+
+[project.scripts]
+jigsaw-blend = "jigsaw_agile.blend:main"
+jigsaw-cv = "jigsaw_agile.metrics:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

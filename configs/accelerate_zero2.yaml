@@ -1,0 +1,37 @@
+compute_environment: LOCAL_MACHINE
+debug: false
+deepspeed_config:
+  gradient_accumulation_steps: 4
+  gradient_clipping: 1.0
+  train_micro_batch_size_per_gpu: 4
+  zero_stage: 2
+  offload_optimizer_device: none
+  offload_param_device: none
+  zero3_init_flag: false
+  stage3_gather_16bit_weights_on_model_save: false
+  stage3_max_live_parameters: 1e8
+  stage3_max_reuse_distance: 1e8
+  stage3_prefetch_bucket_size: 5e7
+  stage3_param_persistence_threshold: 1e5
+  zero_allow_untested_optimizer: true
+  zero_force_ds_cpu_optimizer: false
+  bf16:
+    enabled: true
+distributed_type: DEEPSPEED
+downcast_bf16: "yes"
+dynamo_config:
+  dynamo_backend: INDUCTOR
+  dynamo_use_fullgraph: false
+  dynamo_use_dynamic: false
+enable_cpu_affinity: false
+machine_rank: 0
+main_training_function: main
+mixed_precision: fp16
+num_machines: 1
+num_processes: 2
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false
