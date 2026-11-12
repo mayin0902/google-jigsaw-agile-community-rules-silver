@@ -60,6 +60,8 @@ bash scripts/install_kaggle_deps.sh
 bash scripts/run_kaggle_pipeline.sh
 ```
 
+The dependency installer requires `uv` and an attached Kaggle dataset containing the offline wheels. It reads from `/kaggle/input/jigsaw-packages2/whls/` by default. If the wheel dataset is mounted elsewhere, pass that directory as the first argument to `scripts/install_kaggle_deps.sh`. The installer uses `--no-index`.
+
 The final submission is written to `/kaggle/working/submission.csv`.
 
 ## Local Checks
