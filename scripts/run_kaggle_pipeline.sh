@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.."
+
 export PYTHONPATH="${PYTHONPATH:-}:$(pwd)/src"
 
 accelerate launch --config_file configs/accelerate_zero2.yaml scripts/train_qwen_lora.py
