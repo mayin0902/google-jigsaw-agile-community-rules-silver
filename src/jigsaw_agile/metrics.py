@@ -58,7 +58,12 @@ def main() -> None:
 
     truth = pd.read_csv(args.truth)
     pred = pd.read_csv(args.pred)
-    df = truth.merge(pred, on="row_id", suffixes=("_true", "_pred"))
+    for name, table in (("Truth", truth), ("Prediction", pred)):
+        if table["row_id"].isna().any() or table["row_id"].duplicated().any():
+            raise ValueError(f"{name} row_id values must be present and unique.")
+    if set(truth["row_id"]) != set(pred["row_id"]):
+        raise ValueError("Truth and prediction row_id values must match exactly before scoring.")
+    df = truth.merge(pred, on="row_id", suffixes=("_true", "_pred"), validate="one_to_one")
     label_col = args.label_col + "_true" if args.label_col in pred.columns else args.label_col
     pred_col = args.pred_col + "_pred" if args.pred_col in truth.columns else args.pred_col
     groups = df[args.group_col] if args.group_col else None
